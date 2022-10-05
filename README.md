@@ -132,4 +132,17 @@ Controller Comments will be created in src/controllers/comments.controller.ts
 ? What is the base HTTP path name of the CRUD operations? /comments
 ```
 
-* The back end is ready and works perfect
+** The back end is ready and works perfect
+
+## React (Front-End)
+
+for front-end using these libreries:
+
+```
+https://materializecss.com/
+```
+and 
+
+```
+https://reactrouter.com/
+```
