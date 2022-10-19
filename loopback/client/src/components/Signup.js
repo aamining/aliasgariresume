@@ -8,16 +8,16 @@ class Signup extends Component{
     NewUser(newUser){
         axios.request({
           method:'post',
-          url:'/signup',
+          url:'http://localhost:7000/signup',
           data: newUser
-        }).then((response) => response )
+        }).then((response) => response)
         .catch(err => console.log(err));
       }
   
     onSubmit(e){
         const newUser = {
-          email: this.refs.name.value,
-          password: this.refs.city.value,
+          email: this.refs.email.value,
+          password: this.refs.password.value,
           
         }
         this.NewUser(newUser);

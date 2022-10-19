@@ -369,6 +369,26 @@ export class UserController {
 
 ## React (Front-End)
 
+```
+npm install http-proxy-middleware --save
+```
+
+We need to add this file called setupProxy.js under the src folder of the React App. You do not need to import this file anywhere. It is automatically registered when you start the development server.
+
+```
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+module.exports = function(app) {
+  app.use(
+    '/api',
+    createProxyMiddleware({
+      target: 'http://localhost:7000',
+      changeOrigin: true,
+    })
+  );
+};
+```
+
 for front-end using these libreries:
 
 ```
