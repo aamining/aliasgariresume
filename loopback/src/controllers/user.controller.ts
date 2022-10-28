@@ -1,8 +1,3 @@
-// Uncomment these imports to begin using these cool features!
-
-// import {inject} from '@loopback/core';
-
-
 // Copyright IBM Corp. and LoopBack contributors 2020. All Rights Reserved.
 // Node module: @loopback/example-todo-jwt
 // This file is licensed under the MIT License.
@@ -37,6 +32,7 @@ export class NewUserRequest extends User {
     required: true,
   })
   password: string;
+
 }
 
 const CredentialsSchema: SchemaObject = {
@@ -153,6 +149,7 @@ export class UserController {
     })
     newUserRequest: NewUserRequest,
   ): Promise<User> {
+    
     const password = await hash(newUserRequest.password, await genSalt());
     const savedUser = await this.userRepository.create(
       _.omit(newUserRequest, 'password'),

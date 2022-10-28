@@ -3,14 +3,13 @@ import React, { Component } from 'react';
 import axios from 'axios'
 
 
-class Signup extends Component{
+class Login extends Component{
 
     NewUser(newUser){
         axios.request({
           method:'post',
-          url:'http://localhost:7000/signup',
-          data: newUser,
-          
+          url:'http://localhost:7000//users/login',
+          data: newUser
         }).then((response) => console.log(response))
           
         .catch(err => console.log(err));
@@ -18,10 +17,8 @@ class Signup extends Component{
   
     onSubmit(e){
         const newUser = {
-          username:this.refs.username.value,
           email: this.refs.email.value,
           password: this.refs.password.value,
-          
 
         }
         this.NewUser(newUser);
@@ -33,16 +30,13 @@ class Signup extends Component{
  
        <div>
 
-       <h1>Signup</h1>
+       <h1>Login</h1>
        <form onSubmit={this.onSubmit.bind(this)}>
-       <div className="input-field">
-            <input type="text" name="username" ref="username" required/>
-            <label htmlFor="username">Username</label>
-        </div>
+       
        
        <div className="input-field">
             <input type="text" name="email" ref="email" required/>
-            <label htmlFor="email">email</label>
+            <label htmlFor="email">Email</label>
         </div>
 
         <div className="input-field">
@@ -61,4 +55,4 @@ class Signup extends Component{
   }
 }
 
-export default Signup;
+export default Login;
