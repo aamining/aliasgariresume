@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import {Link} from "react-router-dom";
 import axios from 'axios'
 
 
@@ -10,7 +9,7 @@ class Login extends Component{
           method:'post',
           url:'http://localhost:7000//users/login',
           data: newUser
-        }).then((response) => window.location.assign('http://localhost:3000'))
+        }).then((response) => window.location.assign('http://localhost:3000/comments'))
           
         .catch(err => console.log(err));
       }
