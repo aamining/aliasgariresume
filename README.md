@@ -390,7 +390,7 @@ module.exports = function(app) {
 ```
 ## How to make a unique Email(User)
 
-It is true that we have the option of (unique:true) in user>email>model able to see it this at node_modeule>@loopback>authentication-jwt>dist>models.iser.model.js , BUT it does not work here in mongodb.
+It is true that we have the option of (unique:true) in user>email>model able to see it here at node_modeule>@loopback>authentication-jwt>dist>models.iser.model.js , BUT it does not work at mongodb.
 
 to be able to make a unique index for email we need to enter the follow script from CLI of mongodb OR: we can :
 
@@ -400,13 +400,15 @@ to be able to make a unique index for email we need to enter the follow script f
 4- push the CREAT INDEX button
 5- Fill up the form like the picture
 ![1](unique.jpeg)
-6- 
+6- Push the reviw button and all done
+
+The CLI script is:
 
 ```
 db.<collection>.createIndex({ <field>: <type> } { unique: true} )
 ```
-In MongoDB, a single <field> index is an index that references one field from a document.
-<type> specifies whether the indexed values should be arranged in ascending or descending order. A value of 1 or -1 is used to order values in ascending or descending order, respectively.choose -1 pls.
+In MongoDB, a single (field) index is an index that references one field from a document.
+(type) specifies whether the indexed values should be arranged in ascending or descending order. A value of 1 or -1 is used to order values in ascending or descending order, respectively.choose -1 pls.
 
 In Options:The following options document specifies the unique option and the name for the index:
 
