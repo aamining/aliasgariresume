@@ -10,7 +10,7 @@ class Login extends Component{
           method:'post',
           url:'http://localhost:7000//users/login',
           data: newUser
-        }).then((response) => console.log(response))
+        }).then((response) => window.location.assign('http://localhost:3000'))
           
         .catch(err => console.log(err));
       }

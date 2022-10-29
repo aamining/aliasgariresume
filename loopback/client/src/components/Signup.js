@@ -11,7 +11,7 @@ class Signup extends Component{
           url:'http://localhost:7000/signup',
           data: newUser,
           
-        }).then((response) => console.log(response))
+        }).then((response) => window.location.assign('http://localhost:3000/login'))
           
         .catch(err => console.log(err));
       }
