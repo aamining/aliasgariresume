@@ -390,17 +390,17 @@ module.exports = function(app) {
 ```
 ## How to make a unique Email(User)
 
-It is true that we have the option of <unique:true> in user>email>model able to see it this at node_modeule>@loopback>authentication-jwt>dist>models.iser.model.js , BUT it does not work here in mongodb.
+It is true that we have the option of (unique:true) in user>email>model able to see it this at node_modeule>@loopback>authentication-jwt>dist>models.iser.model.js , BUT it does not work here in mongodb.
 
-to be able to make a unique index for email we need to enter the follow sript from CLI of mongodb OR: we can :
+to be able to make a unique index for email we need to enter the follow script from CLI of mongodb OR: we can :
 
 1- log in mongodb.com
-2- choose the data and collection <User>
+2- choose the data and collection (User)
 3- choose the indexes from right side window
 4- push the CREAT INDEX button
 5- Fill up the form like the picture
 ![1](unique.jpeg)
-
+6- 
 
 ```
 db.<collection>.createIndex({ <field>: <type> } { unique: true} )
