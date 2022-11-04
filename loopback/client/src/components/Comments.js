@@ -8,7 +8,8 @@ class Comments extends Component{
         super();
         this.state = {
           comments: [],
-          token: document.cookie
+          token: document.cookie //Read a Cookie with JavaScript
+
         }
     }
     
@@ -25,7 +26,7 @@ class Comments extends Component{
   
         })
         .then((response) => {
-            console.log(response)
+            console.log(response )
         })
         .catch((err) => console.log(err));
     }

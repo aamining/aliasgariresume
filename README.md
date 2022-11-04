@@ -417,13 +417,31 @@ In Options:The following options document specifies the unique option and the na
 
 ```
 
-##JWT
-##LocalStorage vs Cookies: All You Need To Know About Storing JWT Tokens Securely in The Front-End
+## Authorization and Authentication (JWT)
+LocalStorage vs Cookies: All You Need To Know About Storing JWT Tokens Securely in The Front-End
 
 ```
 https://dev.to/cotter/localstorage-vs-cookies-all-you-need-to-know-about-storing-jwt-tokens-securely-in-the-front-end-15id
 ```
 https://loopback.io/doc/en/lb3/Making-authenticated-requests.html#enable-vanity-user-urls
+
+** in order to block a controller like comments, based on lb4 documents we need just to put this befor comments class controller:
+
+```
+import {authenticate} from '@loopback/authentication';
+
+@authenticate('jwt')
+```
+![2](cc.png)
+
+** in order to obtain a token we need to send credentials(email and password) by post request in login page, and then receive the token as RESPONSE in login page and stor ot in cookie.
+
+![3](login.png)
+
+** in order to send the token to header Authorization and unlock the comments we need to put the token in header properties in get REQUEST comments.
+
+![4](comments.png)
+
 
 for front-end using these libreries:
 
