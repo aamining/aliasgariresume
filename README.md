@@ -436,7 +436,7 @@ import {authenticate} from '@loopback/authentication';
 
 ** in order to obtain a token we need to send credentials(email and password) by post request in login page, and then receive the token as RESPONSE in login page and stor ot in cookie.
 
-![3](login.png)
+![3](Login.png)
 
 ** in order to send the token to header Authorization and unlock the comments we need to put the token in header properties in get REQUEST comments.
 
