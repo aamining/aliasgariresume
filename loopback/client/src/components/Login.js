@@ -1,19 +1,50 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios  from 'axios'
 
 
 class Login extends Component{
 
+  constructor(){
+    super();
+    this.state = {
+      token: []
+    }
+  }
+  
     NewUser(newUser){
         axios.request({
           method:'post',
           url:'http://localhost:7000//users/login',
-          data: newUser
-        }).then((response) => window.location.assign('http://localhost:3000/comments'))
+          data: newUser,
           
-        .catch(err => console.log(err));
+
+        }).then(response => 
+          //get token from response
+          { const token=response.data.token;
+            //set JWT token to local
+            localStorage.setItem("token", token);
+            //set token to axios common header
+            //setAuthToken(token);
+            //headers: {"Authorization", `Bearer ${token}`}
+            //axios.defaults.headers.common['Authorization'] = `bearer ${token}`
+            //put the token in cookie
+            document.cookie= token;
+            //redirect user to other page
+            
+            document.location.assign('http://localhost:3000/comments')
+            console.log(token)
+          })
+        
+        
+          //headers: {"Authorization" : `Bearer ${token}`}
+          //axios.defaults.headers.common['Authorization']=token)
+          
+          
+        
+        .catch((err) => console.log(err))
+        
       }
-  
+      
     onSubmit(e){
         const newUser = {
           email: this.refs.email.value,

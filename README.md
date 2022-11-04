@@ -417,6 +417,14 @@ In Options:The following options document specifies the unique option and the na
 
 ```
 
+##JWT
+##LocalStorage vs Cookies: All You Need To Know About Storing JWT Tokens Securely in The Front-End
+
+```
+https://dev.to/cotter/localstorage-vs-cookies-all-you-need-to-know-about-storing-jwt-tokens-securely-in-the-front-end-15id
+```
+https://loopback.io/doc/en/lb3/Making-authenticated-requests.html#enable-vanity-user-urls
+
 for front-end using these libreries:
 
 ```
