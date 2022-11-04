@@ -7,7 +7,6 @@ class Login extends Component{
   constructor(){
     super();
     this.state = {
-      token: []
     }
   }
   
@@ -19,31 +18,26 @@ class Login extends Component{
           
 
         }).then(response => 
-          //get token from response
+
+            //get token from response
           { const token=response.data.token;
+
             //set JWT token to local
-            localStorage.setItem("token", token);
-            //set token to axios common header
-            //setAuthToken(token);
-            //headers: {"Authorization", `Bearer ${token}`}
-            //axios.defaults.headers.common['Authorization'] = `bearer ${token}`
+            //localStorage.setItem("token", token);
+            
+            
             //put the token in cookie
             document.cookie= token;
+
             //redirect user to other page
-            
             document.location.assign('http://localhost:3000/comments')
             console.log(token)
           })
         
+
+      .catch((err) => console.log(err))
         
-          //headers: {"Authorization" : `Bearer ${token}`}
-          //axios.defaults.headers.common['Authorization']=token)
-          
-          
-        
-        .catch((err) => console.log(err))
-        
-      }
+    }
       
     onSubmit(e){
         const newUser = {
@@ -53,7 +47,7 @@ class Login extends Component{
         }
         this.NewUser(newUser);
         e.preventDefault();
-      }
+    }
 
   render(){
     return (
