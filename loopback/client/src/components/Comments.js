@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import CommentItem from './CommentItem';
+import AddComment from './AddComment';
+import './Comments.css';
+
 
 
 class Comments extends Component{
@@ -35,62 +38,21 @@ class Comments extends Component{
         .catch((err) => console.log(err));
     }
 
-    addComment(newComment){
-        axios.request({
     
-        headers: {"Authorization": `Bearer ${this.state.token}`},
-          method:'post',
-          url:'http://localhost:7000/comments',
-          data: newComment,
-    
-        }).then(response => {
-          console.log("this is from addcomment page:", response)
-          
-        }).catch(err => console.log(err));
-      }
-    
-      onSubmit(e){
-        const newComment = {
-          name: this.refs.name.value,
-          title: this.refs.title.value,
-          comm: this.refs.comm.value
-        }
-        this.addComment(newComment);
-        this.getComments(); //this is for reaction as react. otherwise we need to refresh the page to see the new comment. need to bind this.
-        e.preventDefault();
-      }
-
     render(){ 
 
         return(
-            <div>
-                <h1>Comments</h1>
-                {this.state.comments?
-                (this.state.comments.map((comment) => (<CommentItem key = {comment._id} comment={comment} />))):null
-                }
-                
-                <br />
-                <h1>Add A Comment</h1>
 
-                <form onSubmit={this.onSubmit.bind(this)}>
-                    <div className="input-field">
-                        <input type="text" name="name" ref="name" />
-                        <label htmlFor="name">Name</label>
-                    </div>
-                    <div className="input-field">
-                        <input type="text" name="title" ref="title" />
-                        <label htmlFor="title">Title</label>
-                    </div>
-                    <div className="input-field">
-                        <input type="text" name="comm" ref="comm" />
-                        <label htmlFor="comm">Comment</label>
-                    </div>
-                    <input type="submit" value="Ok !" className="btn" />
-                </form>
+                <div className='comments'>
+                    <h1>Comments</h1>
+                    {this.state.comments?
+                    (this.state.comments.map((comment) => (<CommentItem key = {comment._id} comment={comment} />))):null
+                    }
+                    {
+                        <AddComment doIt={this.getComments}/>
+                    }
 
-            </div>
-            
-
+                </div>
         )
     }    
 }

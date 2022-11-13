@@ -443,12 +443,21 @@ import {authenticate} from '@loopback/authentication';
 ![4](comments.png)
 
 
-for front-end using these libreries:
+## For CSS front-end using these libreries:
 
 ```
 https://materializecss.com/
+
 ```
-and 
+The simple css format will easily change just by add the following links in to index.html in public folder:
+
+```
+1- copy and paste the CDN link and script from materializecss in to index.html.
+2- copy and paste the CDN script from minified link of "Jquery cdn" in to index.html
+3- copy and paste the CDN link from " font awsome cdn" in to index.html
+```
+ by adding the mentioned links and scripts the format of fonts and forms will change automaticly.
+
 
 ```
 https://reactrouter.com/

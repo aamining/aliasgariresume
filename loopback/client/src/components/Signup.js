@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import './Signup.css'
 
 
 class Signup extends Component{
@@ -30,7 +31,7 @@ class Signup extends Component{
   render(){
     return (
  
-       <div>
+       <div className='signup'>
 
        <h1>Signup</h1>
        <form onSubmit={this.onSubmit.bind(this)}>
