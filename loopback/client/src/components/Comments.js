@@ -23,7 +23,7 @@ class Comments extends Component{
     componentDidMount(){
         this.getComments();
     }
-    
+ 
     getComments(){
        
         axios.request({
@@ -48,8 +48,9 @@ class Comments extends Component{
                     {this.state.comments?
                     (this.state.comments.map((comment) => (<CommentItem key = {comment._id} comment={comment} />))):null
                     }
+
                     {
-                        <AddComment doIt={this.getComments}/>
+                    <AddComment doIt={this.getComments}/>
                     }
 
                 </div>

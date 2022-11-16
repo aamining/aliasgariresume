@@ -8,11 +8,30 @@ class AddComment extends Component{
     constructor(){
         super();
         this.state = {
-          
-        token: document.cookie //Read a Cookie with JavaScript
-
+          token: document.cookie,//Read a Cookie with JavaScript
+          userId:null
         }
     }
+
+    componentDidMount(){
+      this.getUser();
+    }
+
+
+    getUser(){
+      axios.request({
+        method:'get',
+        url:'http://localhost:7000/whoAmI',
+        headers: {"Authorization": `Bearer ${this.state.token}`}
+  
+  
+      }).then(response =>{
+        this.setState({userId:response.data})        
+        
+      })
+      .catch((err) => console.log("err from whoAmI",err))
+    }
+   
 
   addComment(newComment){
     axios.request({
@@ -28,11 +47,14 @@ class AddComment extends Component{
     }).catch(err => console.log(err));
   }
 
+  getUser;
   onSubmit(e){
     const newComment = {
       name: this.refs.name.value,
       title: this.refs.title.value,
-      comm: this.refs.comm.value
+      comm: this.refs.comm.value,
+      user_id:this.state.userId
+      
     }
     this.addComment(newComment);
     this.props.doIt(); //call a function(getComments) from another component(comments)

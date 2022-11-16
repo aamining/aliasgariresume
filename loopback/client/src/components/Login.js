@@ -14,7 +14,7 @@ class Login extends Component{
     NewUser(newUser){
         axios.request({
           method:'post',
-          url:'http://localhost:7000//users/login',
+          url:'http://localhost:7000/users/login',
           data: newUser,
           
 

@@ -24,6 +24,11 @@ export class Comments extends Entity {
   })
   comm?: string;
 
+  @property({
+    type: 'string',
+  })
+  user_id?: string;
+
   // Define well-known properties here
 
   // Indexer property to allow additional data
