@@ -47,7 +47,7 @@ class AddComment extends Component{
     }).catch(err => console.log(err));
   }
 
-  getUser;
+  
   onSubmit(e){
     const newComment = {
       name: this.refs.name.value,
@@ -57,7 +57,7 @@ class AddComment extends Component{
       
     }
     this.addComment(newComment);
-    this.props.doIt(); //call a function(getComments) from another component(comments)
+    this.props.doIt(); //call a function(getComments) from another component(comments)@ this point
     e.preventDefault();
     }
   
@@ -71,6 +71,7 @@ class AddComment extends Component{
 
        <form onSubmit={this.onSubmit.bind(this)}>
           <div className="input-field">
+          
             <input type="text" name="name" ref="name" required/>
             <label htmlFor="name">Name</label>
           </div>
@@ -79,8 +80,10 @@ class AddComment extends Component{
             <label htmlFor="title">Title</label>
           </div>
           <div className="input-field">
+            
             <input type="text" name="comm" ref="comm" required/>
             <label htmlFor="comm">Comment</label>
+          
           </div>
           <input type="submit" value="Save" className="btn" />
         </form>

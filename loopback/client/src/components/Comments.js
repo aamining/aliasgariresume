@@ -12,14 +12,12 @@ class Comments extends Component{
         super();
         this.state = {
           comments: [],
-          token: document.cookie //Read a Cookie with JavaScript
-
+          userId:null,
+          token: document.cookie//Read a Cookie with JavaScript
         }
         this.getComments = this.getComments.bind(this);
     }
-    
 
-    
     componentDidMount(){
         this.getComments();
     }
@@ -33,7 +31,7 @@ class Comments extends Component{
   
         })
         .then(response => {
-           this.setState({comments:response.data}); console.log("this is from get",response)
+           this.setState({comments:response.data}); console.log("this is from comment get",response)
         })
         .catch((err) => console.log(err));
     }
@@ -46,7 +44,7 @@ class Comments extends Component{
                 <div className='comments'>
                     <h1>Comments</h1>
                     {this.state.comments?
-                    (this.state.comments.map((comment) => (<CommentItem key = {comment._id} comment={comment} />))):null
+                    (this.state.comments.map((comment) => (<CommentItem key = {comment._id} comment={comment} goIt={this.getComments}/>))):null
                     }
 
                     {

@@ -46,7 +46,7 @@ class Signup extends Component{
         </div>
 
         <div className="input-field">
-            <input type="text" name="password" ref="password" required/>
+            <input type="password" name="password" ref="password" required/>
             <label htmlFor="password">Password</label>
         </div>
 
