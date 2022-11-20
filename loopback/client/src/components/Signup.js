@@ -37,17 +37,17 @@ class Signup extends Component{
        <form onSubmit={this.onSubmit.bind(this)}>
        <div className="input-field">
             <input type="text" name="username" ref="username" required/>
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username" className="black-text">User name</label>
         </div>
        
        <div className="input-field">
             <input type="text" name="email" ref="email" required/>
-            <label htmlFor="email">email</label>
+            <label htmlFor="email" className="black-text">email (unique)</label>
         </div>
 
         <div className="input-field">
             <input type="password" name="password" ref="password" required/>
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password" className="black-text">Password</label>
         </div>
 
         

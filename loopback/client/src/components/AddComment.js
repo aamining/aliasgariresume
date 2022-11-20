@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
 
 
 class AddComment extends Component{
@@ -71,23 +70,22 @@ class AddComment extends Component{
     return (
      <div>
         <br />
-       <Link className="btn grey" to="/">Back</Link>
        <h1>Add A Comment</h1>
 
        <form onSubmit={this.onSubmit.bind(this)}>
           <div className="input-field">
-          
+            
             <input type="text" name="name" ref="name" required/>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name" className="black-text">Name</label>
           </div>
           <div className="input-field">
             <input type="text" name="title" ref="title" required/>
-            <label htmlFor="title">Title</label>
+            <label htmlFor="title" className="black-text">Title</label>
           </div>
           <div className="input-field">
             
             <input type="text" name="comm" ref="comm" required/>
-            <label htmlFor="comm">Comment</label>
+            <label htmlFor="comm" className="black-text">Comment</label>
           
           </div>
           <input type="submit" value="Save" className="btn" />

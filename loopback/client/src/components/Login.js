@@ -61,12 +61,12 @@ class Login extends Component{
        
        <div className="input-field">
             <input type="text" name="email" ref="email" required/>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email" className="black-text">Email</label>
         </div>
 
         <div className="input-field">
             <input type="password" name="password" ref="password" required/>
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password" className="black-text">Password</label>
         </div>
 
         
