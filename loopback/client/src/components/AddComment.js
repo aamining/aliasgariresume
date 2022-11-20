@@ -44,7 +44,13 @@ class AddComment extends Component{
     }).then(response => {
       console.log("this is from addcomment page:", response)
       
-    }).catch(err => console.log(err));
+    })
+    .catch(err => console.log(err))
+
+    .then(response=>{this.props.doIt()}); 
+    //call a function(getComments) from another component(comments)@ this point
+    // the third line always executed in axios structure.
+
   }
 
   
@@ -57,7 +63,6 @@ class AddComment extends Component{
       
     }
     this.addComment(newComment);
-    this.props.doIt(); //call a function(getComments) from another component(comments)@ this point
     e.preventDefault();
     }
   

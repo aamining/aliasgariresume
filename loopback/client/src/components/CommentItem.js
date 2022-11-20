@@ -42,11 +42,17 @@ class CommentItem extends Component{
         
   
       })
+      
       .then(response => {
-        console.log("this is an ok from delete", response) 
-        
+        console.log("this is an ok from delete", response)
+
       })
-      .catch(err => console.log("this error is from delete:",err));
+      
+      .catch(err => {console.log("this error is from delete:",err)})
+
+      .then(response=>{this.props.goIt()}) 
+      // this is from comment component.
+      // the third line always executed in axios structure.
 
   }
   
