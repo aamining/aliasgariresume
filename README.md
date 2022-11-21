@@ -399,7 +399,7 @@ to be able to make a unique index for email we need to enter the follow script f
 3- choose the indexes from right side window
 4- push the CREAT INDEX button
 5- Fill up the form like the picture
-![1](unique.jpeg)
+![1](public/unique.jpeg)
 6- Push the reviw button and all done
 
 The CLI script is:
@@ -432,15 +432,15 @@ import {authenticate} from '@loopback/authentication';
 
 @authenticate('jwt')
 ```
-![2](cc.png)
+![2](public/cc.png)
 
 ** in order to obtain a token we need to send credentials(email and password) by post request in login page, and then receive the token as RESPONSE in login page and stor ot in cookie.
 
-![3](Login.png)
+![3](public/Login.png)
 
 ** in order to send the token to header Authorization and unlock the comments we need to put the token in header properties in get REQUEST comments.
 
-![4](comments.png)
+![4](public/comments.png)
 
 
 ## For CSS front-end using these libreries:

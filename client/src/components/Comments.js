@@ -22,20 +22,24 @@ class Comments extends Component{
         this.getComments();
     }
  
-    getComments(){
-       
-        axios.request({
-            method:'get',
-            url:'http://localhost:7000/comments',
-            headers: {"Authorization": `Bearer ${this.state.token}`}
+    async getComments(){
   
-        })
-        .then(response => {
-           this.setState({comments:response.data}); console.log("this is from comment get",response)
-        })
-        .catch((err) => console.log(err));
+            await axios.request({
+                method:'get',
+                url:'http://localhost:7000/comments',
+                headers: {"Authorization": `Bearer ${this.state.token}`}
+    
+            })
+        
+            .then(response => {
+            this.setState({comments:response.data}); console.log("this is from comment get",response)
+            })
+        
+            .catch((err) => console.log("tis is error from comments component",err));
+        
     }
 
+    
     
     render(){ 
 
