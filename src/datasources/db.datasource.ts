@@ -1,17 +1,23 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
+var dotenv = require('dotenv');
+dotenv.config();
+
+
+
+
 
 const config = {
   name: 'db',
   connector: 'mongodb',
-  url: 'mongodb+srv://aliali:Abcd1974@ali.3huc2.mongodb.net/ali',
+  url: process.env.MONGODB_URI,
   host: '',
   port: 0,
   user: '',
   password: '',
   database: '',
   useNewUrlParser: true
-  
+
 };
 
 // Observe application's life cycle to disconnect the datasource when
@@ -30,5 +36,5 @@ export class DbDataSource extends juggler.DataSource
   ) {
     super(dsConfig);
   }
-  
+
 }
