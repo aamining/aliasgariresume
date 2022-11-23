@@ -9,7 +9,7 @@ class Navbar extends Component{
             {/* the above class add to change the color if remove it woud be pink again */}
                 <div className="nav-wrapper">
                 <a href="/" classN="brand-logo">Resume</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" class="right ">
                     <li><a href="/signup">signup</a></li>
                     <li><a href="/login">login</a></li>
                     <li><a href="comments">comments</a></li>

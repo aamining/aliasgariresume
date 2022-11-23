@@ -1,9 +1,17 @@
+h1{
+    font-size:xx-large;
+}
 .comments{
-    padding: 20px 50px;
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+
+    padding: 20px 20px;
     background-color: rgb(109, 237, 98);
     border-radius: 0 0 10px 10px;
-    
-    ;
+
+
+
     box-shadow: 0 4px 8px 0 rgba(13, 13, 13, 0.95);
     transition: 0.3s;
     width: 50%;

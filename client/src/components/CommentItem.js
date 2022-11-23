@@ -1,5 +1,5 @@
-import React,{Component} from 'react';
 import axios from 'axios';
+import React, { Component } from 'react';
 
 class CommentItem extends Component{
 
@@ -7,7 +7,7 @@ class CommentItem extends Component{
     super();
     this.state = {
 
-      
+
       userId:null,
       token: document.cookie//Read a Cookie with JavaScript
 
@@ -27,8 +27,8 @@ class CommentItem extends Component{
 
 
     }).then(response =>{
-      this.setState({userId:response.data})        
-      
+      this.setState({userId:response.data})
+
     })
     .catch((err) => console.log("error from whoAmI",err))
   }
@@ -39,38 +39,38 @@ class CommentItem extends Component{
       headers: {"Authorization": `Bearer ${this.state.token}`},
         method:'delete',
         url:'http://localhost:7000/comments/'+id
-        
-  
+
+
       })
-      
+
       .then(response => {
         console.log("this is an ok from delete", response)
 
       })
-      
+
       .catch(err => {console.log("this error is from delete:",err)})
 
-      .then(response=>{this.props.goIt()}) 
+      .then(response=>{this.props.goIt()})
       // this is from comment component.
       // the third line always executed in axios structure.
 
   }
-  
+
 
 
   render(){
     return(
 
     this.state.userId===this.props.comment.user_id?
-      
+
     <p><button onClick={()=>this.deleteItem(this.props.comment._id)}>X</button>
        You said that: {this.props.comment.comm} </p>
-     
+
       :
       <p>{this.props.comment.name} as a {this.props.comment.title} says {this.props.comment.comm}</p>
-      
+
     )
-    
+
   }
 
 }

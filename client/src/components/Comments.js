@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
 import axios from 'axios';
-import CommentItem from './CommentItem';
+import React, { Component } from 'react';
 import AddComment from './AddComment';
+import CommentItem from './CommentItem';
 import './Comments.css';
 
 
@@ -21,35 +21,40 @@ class Comments extends Component{
     componentDidMount(){
         this.getComments();
     }
- 
+
     async getComments(){
-  
+
             await axios.request({
                 method:'get',
                 url:'http://localhost:7000/comments',
                 headers: {"Authorization": `Bearer ${this.state.token}`}
-    
+
             })
-        
+
             .then(response => {
             this.setState({comments:response.data}); console.log("this is from comment get",response)
             })
-        
+
             .catch((err) => console.log("tis is error from comments component",err));
-        
+
     }
 
-    
-    
-    render(){ 
+
+
+    render(){
 
         return(
 
                 <div className='comments'>
                     <h1>Comments</h1>
+                    <br />
+
                     {this.state.comments?
                     (this.state.comments.map((comment) => (<CommentItem key = {comment._id} comment={comment} goIt={this.getComments}/>))):null
                     }
+                    <br />
+                    <h1>Add A Comment</h1>
+                    <br />
 
                     {
                     <AddComment doIt={this.getComments}/>
@@ -57,7 +62,7 @@ class Comments extends Component{
 
                 </div>
         )
-    }    
+    }
 }
 
 export default Comments;
