@@ -1,11 +1,8 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
-var dotenv = require('dotenv');
-dotenv.config();
-
-
-
-
+// var dotenv = require('dotenv');
+// dotenv.config();
+require('dotenv').config()
 
 const config = {
   name: 'db',
