@@ -9,7 +9,7 @@ const config = {
   connector: 'mongodb',
   url: process.env.MONGODB_URI,
   host: '',
-  port: 0,
+  port: 7000,
   user: '',
   password: '',
   database: '',
