@@ -5,8 +5,6 @@ import Login from "./Login";
 import Profile from "./Profile";
 import Signup from "./Signup";
 
-
-
 class Main extends Component{
     render(){
     return(
