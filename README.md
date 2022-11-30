@@ -84,7 +84,7 @@ Enter an empty property name when done
 ? Enter the property name: name
 ? Property type: string
 ? Is it required?: No
-? Default value [leave blank for none]: 
+? Default value [leave blank for none]:
 
 Let's add another property to Comments
 Enter an empty property name when done
@@ -92,7 +92,7 @@ Enter an empty property name when done
 ? Enter the property name: title
 ? Property type: string
 ? Is it required?: No
-? Default value [leave blank for none]: 
+? Default value [leave blank for none]:
 
 Let's add another property to Comments
 Enter an empty property name when done
@@ -100,7 +100,7 @@ Enter an empty property name when done
 ? Enter the property name: comm
 ? Property type: string
 ? Is it required?: No
-? Default value [leave blank for none]: 
+? Default value [leave blank for none]:
 
 
 ```
@@ -364,14 +364,25 @@ export class UserController {
   }
 }
 ```
+step 4:
 
+do not forget to add this in comment controller file before the class to make a lock
+
+```
+import {authenticate} from '@loopback/authentication';
+@authenticate('jwt')
+
+```
 
 
 ## React (Front-End)
 
+You can create a new React app in the current directory(client) by writing . instead of a project name.
+
 ```
-npm install http-proxy-middleware --save
+npx create-react-app .
 ```
+
 
 We need to add this file called setupProxy.js under the src folder of the React App. You do not need to import this file anywhere. It is automatically registered when you start the development server.
 
@@ -388,6 +399,17 @@ module.exports = function(app) {
   );
 };
 ```
+then in Back-end>SRC>index.ts change the port from 3000 to 7000 like;
+```
+port: +(process.env.PORT ?? 7000),
+```
+
+then:
+
+```
+npm i react-router-dom
+```
+
 ## How to make a unique Email(User)
 
 It is true that we have the option of (unique:true) in user>email>model able to see it here at node_modeule>@loopback>authentication-jwt>dist>models.iser.model.js , BUT it does not work at mongodb.

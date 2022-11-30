@@ -7,9 +7,9 @@ require('dotenv').config()
 const config = {
   name: 'db',
   connector: 'mongodb',
-  url: process.env.MONGODB_URI,
+  url: 'mongodb+srv://aliali:Abcd1974@ali.3huc2.mongodb.net/ali',
   host: '',
-  port: 7000,
+  port: 0,
   user: '',
   password: '',
   database: '',
