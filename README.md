@@ -484,3 +484,13 @@ The simple css format will easily change just by add the following links in to i
 ```
 https://reactrouter.com/
 ```
+
+
+# How to push to heroku
+```
+https://more-modise.medium.com/how-to-deploy-loopback-4-application-in-heroku-3d059b73cbd5
+```
+
+```
+npm i concurrently
+```
