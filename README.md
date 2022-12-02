@@ -494,3 +494,7 @@ https://more-modise.medium.com/how-to-deploy-loopback-4-application-in-heroku-3d
 ```
 npm i concurrently
 ```
+```
+npm i proxy
+ "proxy": "http://localhost:7000"
+```
