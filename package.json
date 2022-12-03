@@ -32,7 +32,7 @@
     "preopenapi-spec": "npm run build",
     "openapi-spec": "node ./dist/openapi-spec",
     "rebuild": "npm run clean && npm run build",
-    "start": "node . && node dist/index.js",
+    "start": "node . && node dist/index.js && npm run start --prefix client",
     "client": "npm start --prefix client",
 
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client "
