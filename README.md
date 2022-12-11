@@ -498,3 +498,10 @@ npm i concurrently
 npm i proxy
  "proxy": "http://localhost:7000"
 ```
+
+```
+in src > application.ts add api to homepage
+
+// Set up default home page
+    this.static('/api', path.join(__dirname, '../public'));
+```
