@@ -13,7 +13,6 @@
   },
   "scripts": {
     "build": "lb-tsc",
-    "homepage": "/api",
     "postinstall": "npm run build",
     "build:watch": "lb-tsc --watch",
     "clean": "lb-clean *example-todo-jwt*.tgz dist *.tsbuildinfo package",

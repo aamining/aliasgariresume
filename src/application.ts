@@ -1,11 +1,11 @@
 import {BootMixin} from '@loopback/boot';
 import {ApplicationConfig} from '@loopback/core';
-import {
-  RestExplorerBindings,
-  RestExplorerComponent,
-} from '@loopback/rest-explorer';
 import {RepositoryMixin} from '@loopback/repository';
 import {RestApplication} from '@loopback/rest';
+import {
+  RestExplorerBindings,
+  RestExplorerComponent
+} from '@loopback/rest-explorer';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
@@ -13,9 +13,7 @@ import {MySequence} from './sequence';
 // ---------- ADD IMPORTS -------------
 import {AuthenticationComponent} from '@loopback/authentication';
 import {
-  JWTAuthenticationComponent,
-  SECURITY_SCHEME_SPEC,
-  UserServiceBindings,
+  JWTAuthenticationComponent, UserServiceBindings
 } from '@loopback/authentication-jwt';
 import {DbDataSource} from './datasources';
 // ------------------------------------
@@ -32,7 +30,7 @@ export class LoopbackApplication extends BootMixin(
     this.sequence(MySequence);
 
     // Set up default home page
-    this.static('/', path.join(__dirname, '../public'));
+    this.static('/api', path.join(__dirname, '../public'));
 
     // Customize @loopback/rest-explorer configuration here
     this.configure(RestExplorerBindings.COMPONENT).to({
