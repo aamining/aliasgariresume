@@ -14,7 +14,7 @@ class Login extends Component{
     NewUser(newUser){
         axios.request({
           method:'post',
-          url:'/api/users/login',
+          url:'http://localhost:7000/users/login',
           data: newUser,
 
 
@@ -31,7 +31,7 @@ class Login extends Component{
             document.cookie= token;
 
             //redirect user to other page
-            document.location.assign('/comments')
+            document.location.assign('http://localhost:3000/comments')
             console.log(token)
           })
 

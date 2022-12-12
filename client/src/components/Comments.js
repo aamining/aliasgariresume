@@ -26,7 +26,7 @@ class Comments extends Component{
 
             await axios.request({
                 method:'get',
-                url:'/api/comments',
+                url:'http://localhost:7000/comments',
                 headers: {"Authorization": `Bearer ${this.state.token}`}
 
             })
