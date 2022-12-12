@@ -1,6 +1,6 @@
+import axios from 'axios';
 import React, { Component } from 'react';
-import axios  from 'axios'
-import'./Login.css'
+import './Login.css';
 
 
 class Login extends Component{
@@ -10,36 +10,36 @@ class Login extends Component{
     this.state = {
     }
   }
-  
+
     NewUser(newUser){
         axios.request({
           method:'post',
-          url:'http://localhost:7000/users/login',
+          url:'/api/users/login',
           data: newUser,
-          
 
-        }).then(response => 
+
+        }).then(response =>
 
             //get token from response
           { const token=response.data.token;
 
             //set JWT token to local
             //localStorage.setItem("token", token);
-            
-            
+
+
             //put the token in cookie
             document.cookie= token;
 
             //redirect user to other page
-            document.location.assign('http://localhost:3000/comments')
+            document.location.assign('/comments')
             console.log(token)
           })
-        
+
 
       .catch((err) => console.log(err))
-        
+
     }
-      
+
     onSubmit(e){
         const newUser = {
           email: this.refs.email.value,
@@ -52,13 +52,13 @@ class Login extends Component{
 
   render(){
     return (
- 
+
        <div className='login'>
 
        <h1>Login</h1>
        <form onSubmit={this.onSubmit.bind(this)}>
-       
-       
+
+
        <div className="input-field">
             <input type="text" name="email" ref="email" required/>
             <label htmlFor="email" className="black-text">Email</label>
@@ -69,13 +69,13 @@ class Login extends Component{
             <label htmlFor="password" className="black-text">Password</label>
         </div>
 
-        
+
         <input type="submit" value="Submit" className="btn" />
        </form>
-       
-       
+
+
       </div>
-      
+
     )
   }
 }
