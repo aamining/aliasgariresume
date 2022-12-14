@@ -4,31 +4,23 @@ import {
   Filter,
   FilterExcludingWhere,
   repository,
-  Where,
+  Where
 } from '@loopback/repository';
 import {
-  post,
-  param,
-  get,
-  getModelSchemaRef,
-  patch,
-  put,
-  del,
-  requestBody,
-  response,
+  del, get,
+  getModelSchemaRef, param, patch, post, put, requestBody,
+  response
 } from '@loopback/rest';
 import {Comments} from '../models';
 import {CommentsRepository} from '../repositories';
 
-import {authenticate} from '@loopback/authentication';
 
-@authenticate('jwt')
 
 export class CommentsController {
   constructor(
     @repository(CommentsRepository)
-    public commentsRepository : CommentsRepository,
-  ) {}
+    public commentsRepository: CommentsRepository,
+  ) { }
 
   @post('/comments')
   @response(200, {
