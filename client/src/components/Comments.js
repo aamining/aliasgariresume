@@ -26,6 +26,7 @@ class Comments extends Component{
     async getComments(){
 
             await axios.request({
+                header:{"Cross-Origin-Resource-Policy": `cross-origin`},
                 method:'get',
                 url:'http://localhost:7000/comments',
                 headers: {"Authorization": `Bearer ${this.state.token}`}
