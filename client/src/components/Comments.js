@@ -14,6 +14,7 @@ class Comments extends Component{
           comments: [],
           userId:null,
           token: document.cookie//Read a Cookie with JavaScript
+
         }
         this.getComments = this.getComments.bind(this);
     }
