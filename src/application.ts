@@ -57,4 +57,5 @@ export class LoopbackApplication extends BootMixin(
     this.dataSource(DbDataSource, UserServiceBindings.DATASOURCE_NAME);
     // ------------- END OF SNIPPET -------------
   }
+
 }
