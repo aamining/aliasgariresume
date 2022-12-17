@@ -13,6 +13,8 @@ class Login extends Component{
 
     NewUser(newUser){
         axios.request({
+
+          header:{"Access-Control-Allow-Origin": `true`},
           method:'post',
           url:'http://localhost:7000/users/login',
           data: newUser,
@@ -20,8 +22,12 @@ class Login extends Component{
 
         }).then(response =>
 
+
             //get token from response
-          { const token=response.data.token;
+          {
+            this.crossorigin==true;
+
+            const token=response.data.token;
 
             //set JWT token to local
             //localStorage.setItem("token", token);
