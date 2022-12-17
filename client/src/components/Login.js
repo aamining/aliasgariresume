@@ -25,7 +25,6 @@ class Login extends Component{
 
             //get token from response
           {
-            this.crossorigin==true;
 
             const token=response.data.token;
 
