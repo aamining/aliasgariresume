@@ -13,9 +13,7 @@ class Login extends Component{
 
     NewUser(newUser){
         axios.request({
-          header:{'Access-Control-Allow-Credentials': `true`},
           method:'post',
-
           url:'http://localhost:7000/users/login',
           data: newUser,
 
