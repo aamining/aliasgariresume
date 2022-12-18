@@ -16,7 +16,7 @@ class Login extends Component{
 
           method:'post',
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            'cross-origin-resource-policy': 'cross-origin'
           },
           url:'http://localhost:7000/users/login',
           data: newUser,
