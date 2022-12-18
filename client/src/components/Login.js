@@ -15,8 +15,9 @@ class Login extends Component{
         axios.request({
 
           method:'post',
+
           headers: {
-            'cross-origin-resource-policy': 'cross-origin'
+            'Access-Control-Allow-Credentials': 'true'
           },
           url:'http://localhost:7000/users/login',
           data: newUser,
