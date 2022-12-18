@@ -14,8 +14,10 @@ class Login extends Component{
     NewUser(newUser){
         axios.request({
 
-          header:{"Access-Control-Allow-Origin": `true`},
           method:'post',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+          },
           url:'http://localhost:7000/users/login',
           data: newUser,
 
