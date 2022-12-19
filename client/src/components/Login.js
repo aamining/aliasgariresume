@@ -15,16 +15,16 @@ class Login extends Component{
         axios.request({
 
           method:'post',
-          header:{"Access-Control-Allow-Origin": `*`},
 
-          url:'https://commentsforali.herokuapp.com/users/login',
+          url:'http://localhost:7000/users/login',
           data: newUser,
-
 
         }).then(response =>
 
+
           {
             console.log(response);
+
             //get token from response
             const token=response.data.token;
 
