@@ -15,6 +15,7 @@ class Login extends Component{
         axios.request({
 
           method:'post',
+          header:{"Access-Control-Allow-Origin": `*`},
 
           url:'https://commentsforali.herokuapp.com/users/login',
           data: newUser,
