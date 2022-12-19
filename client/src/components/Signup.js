@@ -1,6 +1,6 @@
+import axios from 'axios';
 import React, { Component } from 'react';
-import axios from 'axios'
-import './Signup.css'
+import './Signup.css';
 
 
 class Signup extends Component{
@@ -8,20 +8,25 @@ class Signup extends Component{
     NewUser(newUser){
         axios.request({
           method:'post',
-          url:'http://localhost:7000/signup',
+          // in dedevelopment:
+          //url:'http://localhost:7000/signup',
+          // in production:
+          url:'https://commentsforali.herokuapp.com/signup',
           data: newUser,
-          
-        }).then((response) => window.location.assign('http://localhost:3000/login'))
-          
+
+        }).then((response) => window.location.assign('https://commentsforali.herokuapp.com/login'))
+        //in development:
+        //.then((response) => window.location.assign('http://localhost:3000/login'))
+
         .catch(err => console.log(err));
       }
-  
+
     onSubmit(e){
         const newUser = {
           username:this.refs.username.value,
           email: this.refs.email.value,
           password: this.refs.password.value,
-          
+
 
         }
         this.NewUser(newUser);
@@ -30,7 +35,7 @@ class Signup extends Component{
 
   render(){
     return (
- 
+
        <div className='signup'>
 
        <h1>Signup</h1>
@@ -39,7 +44,7 @@ class Signup extends Component{
             <input type="text" name="username" ref="username" required/>
             <label htmlFor="username" className="black-text">User name</label>
         </div>
-       
+
        <div className="input-field">
             <input type="text" name="email" ref="email" required/>
             <label htmlFor="email" className="black-text">email (unique)</label>
@@ -50,13 +55,13 @@ class Signup extends Component{
             <label htmlFor="password" className="black-text">Password</label>
         </div>
 
-        
+
         <input type="submit" value="Submit" className="btn" />
        </form>
-       
-       
+
+
       </div>
-      
+
     )
   }
 }
