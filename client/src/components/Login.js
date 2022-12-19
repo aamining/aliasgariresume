@@ -22,10 +22,9 @@ class Login extends Component{
 
         }).then(response =>
 
-
-            //get token from response
           {
-
+            console.log(response);
+            //get token from response
             const token=response.data.token;
 
             //set JWT token to local
@@ -36,8 +35,8 @@ class Login extends Component{
             document.cookie= token;
 
             //redirect user to other page
-            document.location.assign('https://commentsforali.herokuapp.com/comments')
-            console.log(token)
+            //document.location.assign('https://commentsforali.herokuapp.com/comments')
+            //console.log(token)
           })
 
 
