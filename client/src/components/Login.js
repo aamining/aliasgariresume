@@ -16,9 +16,6 @@ class Login extends Component{
 
           method:'post',
 
-          headers: {
-            'Access-Control-Allow-Origin': '*'
-          },
           url:'https://commentsforali.herokuapp.com/users/login',
           data: newUser,
 
