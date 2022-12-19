@@ -17,7 +17,7 @@ class Login extends Component{
           method:'post',
 
           headers: {
-            'Access-Control-Allow-Credentials': 'true'
+            'Access-Control-Allow-Origin': '*'
           },
           url:'http://localhost:7000/users/login',
           data: newUser,
