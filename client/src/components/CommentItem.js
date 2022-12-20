@@ -23,7 +23,7 @@ class CommentItem extends Component{
   getUser(){
     axios.request({
       method:'get',
-      url:'https://commentsforali.herokuapp.com/whoAmI',
+      url:'http://localhost:7000/whoAmI',
       headers: {"Authorization": `Bearer ${this.state.token}`}
 
 
@@ -39,7 +39,7 @@ class CommentItem extends Component{
 
       headers: {"Authorization": `Bearer ${this.state.token}`},
         method:'delete',
-        url:'https://commentsforali.herokuapp.com/comments/'+id
+        url:'http://localhost:7000/comments/'+id
 
 
       })

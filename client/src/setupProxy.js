@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://commentsforali.herokuapp.com',
+      target: 'http://localhost:7000',
       changeOrigin: true,
     })
   );
