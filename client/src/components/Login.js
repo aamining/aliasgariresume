@@ -29,7 +29,7 @@ class Login extends Component{
           {
 
             //get token from response
-            token=response.data.token;
+            const token=response.data.token;
 
             //set JWT token to local
             //localStorage.setItem("token", token);
